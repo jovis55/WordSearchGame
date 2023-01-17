@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordsearchgame1.controller.SceneController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../resource/img/intro.png" />
+         </image>
+      </ImageView>
+      <Button blendMode="DARKEN" cache="true" layoutX="521.0" layoutY="350.0" mnemonicParsing="false" onAction="#showThemes" prefHeight="72.0" prefWidth="258.0" style="-fx-background-color: #FCD24F; -fx-background-radius: 10;" text="START" AnchorPane.bottomAnchor="250.0">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="55.0" />
+         </font>
+         <effect>
+            <DropShadow height="108.205" radius="54.51875" spread="0.03" width="111.87">
+               <color>
+                  <Color red="0.8999999761581421" green="0.4950000047683716" blue="0.4950000047683716" opacity="0.8899999856948853" />
+               </color>
+            </DropShadow>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Button contentDisplay="BOTTOM" layoutX="1117.0" layoutY="541.0" mnemonicParsing="false" onAction="#showInfo" prefHeight="104.0" prefWidth="91.0">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="1.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="98.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../resource/img/pregunta.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+   </children>
+</AnchorPane>

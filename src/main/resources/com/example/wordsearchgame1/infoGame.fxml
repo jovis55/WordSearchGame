@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordsearchgame1.controller.SceneController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../resource/img/info.png" />
+         </image>
+      </ImageView>
+      <Button blendMode="DARKEN" layoutX="546.0" layoutY="646.0" mnemonicParsing="false" onAction="#showIntro" prefHeight="35.0" prefWidth="209.0" style="-fx-background-color: #32B281;" text="BACK">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="126.03" radius="70.5775" spread="0.79" width="158.28">
+               <color>
+                  <Color red="0.6944444179534912" green="0.9032407402992249" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

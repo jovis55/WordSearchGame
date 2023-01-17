@@ -1,0 +1,149 @@
+/**
+this.botones = new label();
+        this.matrizBotones = botones.getMatriz();
+        this.listaPalabras = new lista(soup);
+        ArrayList<String> arrayPalabras = listaPalabras.getLista();
+        ArrayList<String> arrayLabels = new ArrayList<String>();
+        String palabra;
+        String palabraRepuesto = "";
+        int indexPalabras = 10;
+        int colInicial, rowInicial, direccion, tamañoPalabra;
+
+        while (arrayPalabras != null) {
+            indexPalabras = arrayPalabras.size();
+            palabra = arrayPalabras.get(indexPalabras - 1);
+            int contadorBusqueda = 0;
+            boolean cambiarPalabra = false;
+            if(cambiarPalabra == true){
+                palabra = palabraRepuesto;
+            }
+
+            tamañoPalabra = palabra.length() - 1;
+
+            direccion = lista.generateRandomNumbers(0,2);
+            arrayLabels.add(palabra);
+            System.out.println(palabra+"normal");
+
+            while (arrayPalabras.contains(palabra)) {
+
+                boolean condition1 = false;
+                boolean condition2 = false;
+
+                rowInicial = lista.generateRandomNumbers(0, this.tamañoGrid - 1);
+                colInicial = lista.generateRandomNumbers(0, this.tamañoGrid - 1);
+                String letra;
+                int indexLetra = 0;
+                contadorBusqueda++;
+
+                System.out.println(palabra);
+                System.out.println(rowInicial);
+                System.out.println(colInicial);
+
+                //verificar cuando es horizontal hacia la derecha
+                if (direccion == 0) {
+                    if (colInicial + tamañoPalabra <= 9) {
+                        condition1 = true;
+                        condition2 = true;
+                    }
+                    for (int col = colInicial; col <= colInicial + tamañoPalabra && condition1 == true && condition2 == true; col++) {
+                        letra = palabra.charAt(indexLetra) + "";
+                        if (letra.equals(botones.getButton(rowInicial, col).getText()) || botones.getButton(rowInicial, col).getText().equals("")) {
+                            condition2 = true;
+                        } else {
+                            condition2 = false;
+                        }
+                        indexLetra++;
+                    }
+                    if (condition1 == true && condition2 == true) {
+                        organizarHorizontalDer(rowInicial, colInicial, palabra);
+                        arrayPalabras.remove(palabra);
+
+                    }
+
+
+                }
+                //Verificar cuando la posicion es horizontal y hacia la izquierda
+                else if (direccion == 1) {
+                    if (colInicial - tamañoPalabra >= 0) {
+                        condition2 = true;
+                        for (int col = colInicial; col >= colInicial - tamañoPalabra  && condition2 == true; col--) {
+                            letra = palabra.charAt(indexLetra) + "";
+                            if (letra.equals(botones.getButton(rowInicial, col).getText()) || botones.getButton(rowInicial, col).getText().equals("")) {
+                                condition2 = true;
+                            } else {
+                                condition2 = false;
+                            }
+                            indexLetra++;
+                        }
+                    }
+                    if (condition2 == true ) {
+                        organizarHorizontalIzq(rowInicial, colInicial, palabra);
+                        arrayPalabras.remove(palabra);
+                    }
+
+                }
+
+
+                if(contadorBusqueda > 16){
+                    int direccionNueva = direccion;
+                    direccion = lista.generateRandomNumbers(0,2);
+                    while(direccion == direccionNueva)
+                        direccion = lista.generateRandomNumbers(0,2);
+                }
+
+
+            }if (indexPalabras - 1 == 0) {
+                arrayPalabras = null;
+            }
+            if(contadorBusqueda >= 30){
+                arrayPalabras.remove(palabra);
+                arrayLabels.remove(palabra);
+                lista listaRepuesto = new lista(soup);
+                ArrayList<String> lista2 = listaRepuesto.getLista();
+                palabraRepuesto = lista2.get(lista.generateRandomNumbers(0, 9));
+                while (palabraRepuesto.equals(palabra)){
+                    palabraRepuesto = lista2.get(lista.generateRandomNumbers(0,9));
+                }
+                cambiarPalabra = true;
+                arrayPalabras.add(palabraRepuesto);
+                System.out.println(palabraRepuesto+"muchas");
+                arrayLabels.add(palabraRepuesto);
+            }
+
+
+            }
+
+        updateLabels(soup, arrayLabels);
+
+
+*/
+
+public void organizarHorizontalDer(int row, int col, String palabra){
+        int indexLetras = 0;
+        String letra = "";
+        int tamañoPalabra = palabra.length()-1;
+        for(int i = col; i <= tamañoPalabra+col; i++){
+            letra = palabra.charAt(indexLetras)+"";
+            indexLetras++;
+            this.botones.getButton(row, i).setText(letra);
+        }
+
+
+    }
+
+    public void organizarHorizontalIzq(int row, int col, String palabra){
+            int indexLetras = 0;
+            String letra = "";
+            int tamañoPalabra = palabra.length()-1;
+            for(int i = col; i >= col-tamañoPalabra; i--){
+                letra = palabra.charAt(indexLetras)+"";
+                indexLetras++;
+                this.botones.getButton(row, i).setText(letra);
+            }
+
+
+        }
+
+
+
+s
